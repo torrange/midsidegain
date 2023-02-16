@@ -98,7 +98,7 @@ run(LV2_Handle instance, uint32_t n_samples)
 	const float coef_s = DB_CO(gain_s);
 
 	for (uint32_t s = 0; s < n_samples; s++) {
-      	const float tmpM = coef_m * (.5 * (self->input[0][s] + self->input[1][s]));
+		const float tmpM = coef_m * (.5 * (self->input[0][s] + self->input[1][s]));
       	const float tmpS = coef_s * (.5 * (self->input[0][s] - self->input[1][s]));
       	const float tmpL = tmpM + tmpS;
       	const float tmpR = tmpM - tmpS;
