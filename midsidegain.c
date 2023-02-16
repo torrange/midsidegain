@@ -99,11 +99,11 @@ run(LV2_Handle instance, uint32_t n_samples)
 
 	for (uint32_t s = 0; s < n_samples; s++) {
 		const float tmpM = coef_m * (.5 * (self->input[0][s] + self->input[1][s]));
-      	const float tmpS = coef_s * (.5 * (self->input[0][s] - self->input[1][s]));
-      	const float tmpL = tmpM + tmpS;
-      	const float tmpR = tmpM - tmpS;
+		const float tmpS = coef_s * (.5 * (self->input[0][s] - self->input[1][s]));
+		const float tmpL = tmpM + tmpS;
+		const float tmpR = tmpM - tmpS;
 		self->output[0][s] = coef_st * tmpL;
-      	self->output[1][s] = coef_st * tmpR;
+		self->output[1][s] = coef_st * tmpR;
 	}
 }
 
